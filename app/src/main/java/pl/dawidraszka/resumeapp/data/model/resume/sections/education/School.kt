@@ -1,4 +1,4 @@
-package pl.dawidraszka.resumeapp.data.resume.model.resume.sections.education
+package pl.dawidraszka.resumeapp.data.model.resume.sections.education
 
 import java.util.*
 

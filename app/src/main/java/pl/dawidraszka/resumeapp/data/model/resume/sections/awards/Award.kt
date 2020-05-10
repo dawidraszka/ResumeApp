@@ -1,4 +1,4 @@
-package pl.dawidraszka.resumeapp.data.resume.model.resume.sections.awards
+package pl.dawidraszka.resumeapp.data.model.resume.sections.awards
 
 import java.util.*
 

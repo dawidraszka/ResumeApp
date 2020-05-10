@@ -1,4 +1,4 @@
-package pl.dawidraszka.resumeapp.data.resume.model.resume.sections.hobbies
+package pl.dawidraszka.resumeapp.data.model.resume.sections.hobbies
 
 data class HobbiesSection (val hobbies : Array<String>) {
     override fun equals(other: Any?): Boolean {

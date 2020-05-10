@@ -1,4 +1,4 @@
-package pl.dawidraszka.resumeapp.data.resume.model.resume.sections.technicalskills
+package pl.dawidraszka.resumeapp.data.model.resume.sections.technicalskills
 
 data class TechnicalSkillsSection(val technicalSkills : Array<String>) {
     override fun equals(other: Any?): Boolean {

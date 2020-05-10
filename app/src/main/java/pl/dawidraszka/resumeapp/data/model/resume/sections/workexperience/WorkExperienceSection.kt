@@ -1,4 +1,4 @@
-package pl.dawidraszka.resumeapp.data.resume.model.resume.sections.workexperience
+package pl.dawidraszka.resumeapp.data.model.resume.sections.workexperience
 
 data class WorkExperienceSection(val workExperience : Array<WorkExperience>) {
     override fun equals(other: Any?): Boolean {

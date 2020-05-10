@@ -1,4 +1,4 @@
-package pl.dawidraszka.resumeapp.data.resume.model.resume.sections.education
+package pl.dawidraszka.resumeapp.data.model.resume.sections.education
 
 data class EducationSection(val schools : Array<School>) {
     override fun equals(other: Any?): Boolean {
