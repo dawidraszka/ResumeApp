@@ -3,11 +3,8 @@ package pl.dawidraszka.resumeapp.ui.resume
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import pl.dawidraszka.resumeapp.data.repository.resume.ResumeRepository
 
 class ResumeViewModel : ViewModel() {
-
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
-    }
-    val text: LiveData<String> = _text
+    fun getResume() = ResumeRepository.getResume()
 }
