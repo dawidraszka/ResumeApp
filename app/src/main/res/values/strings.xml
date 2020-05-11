@@ -12,4 +12,6 @@
     <string name="menu_contact">Contact</string>
 
     <string name="resume_second">Resume Second</string>
+    <string name="education">Education</string>
+    <string name="objective">Objective</string>
 </resources>

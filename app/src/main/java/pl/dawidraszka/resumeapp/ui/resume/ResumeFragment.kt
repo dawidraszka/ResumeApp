@@ -8,9 +8,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_resume.*
 import kotlinx.android.synthetic.main.nav_header_main.*
 import pl.dawidraszka.resumeapp.R
+import pl.dawidraszka.resumeapp.ui.resume.education.SchoolRecyclerAdapter
 
 class ResumeFragment : Fragment() {
 
@@ -24,10 +26,6 @@ class ResumeFragment : Fragment() {
         resumeViewModel = ViewModelProvider(this).get(ResumeViewModel::class.java)
 
         val root = inflater.inflate(R.layout.fragment_resume, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-
-
-
         return root
     }
 
@@ -35,7 +33,13 @@ class ResumeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         resumeViewModel.getResume().observe(viewLifecycleOwner, Observer {
-            text_home?.text = it.toString()
+            objective_text_view?.text = it.objectiveSection?.objective
+            if(it.educationSection?.schools != null){
+                schools_recycler_view.adapter = SchoolRecyclerAdapter(it.educationSection.schools)
+            }
         })
+
+        schools_recycler_view.layoutManager = LinearLayoutManager(activity)
+
     }
 }

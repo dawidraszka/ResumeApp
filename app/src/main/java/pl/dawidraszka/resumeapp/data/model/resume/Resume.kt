@@ -1,8 +1,5 @@
 package pl.dawidraszka.resumeapp.data.model.resume
 
-import com.google.firebase.firestore.DocumentSnapshot
-import com.google.firebase.firestore.ktx.toObject
-import pl.dawidraszka.resumeapp.data.model.resume.sections.awards.Award
 import pl.dawidraszka.resumeapp.data.model.resume.sections.awards.AwardsSection
 import pl.dawidraszka.resumeapp.data.model.resume.sections.education.EducationSection
 import pl.dawidraszka.resumeapp.data.model.resume.sections.hobbies.HobbiesSection

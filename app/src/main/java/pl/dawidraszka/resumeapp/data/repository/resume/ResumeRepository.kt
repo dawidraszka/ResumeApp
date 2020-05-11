@@ -7,7 +7,9 @@ import androidx.lifecycle.MutableLiveData
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import pl.dawidraszka.resumeapp.data.model.resume.Month
 import pl.dawidraszka.resumeapp.data.model.resume.Resume
+import pl.dawidraszka.resumeapp.data.model.resume.SimpleDate
 import pl.dawidraszka.resumeapp.data.model.resume.sections.awards.Award
 import pl.dawidraszka.resumeapp.data.model.resume.sections.awards.AwardsSection
 import pl.dawidraszka.resumeapp.data.model.resume.sections.education.EducationSection
@@ -28,15 +30,23 @@ object ResumeRepository {
     val resume = MutableLiveData<Resume>()
 
     init {
-
         //TODO REMOVE
         val resumeTemp = Resume(
-            ObjectiveSection("OBJECTIVE"),
+            ObjectiveSection("Highly motivated graduate seeking an Junior Android Development position where I can utilize my software development skills to create mobile applications."),
             EducationSection(
                 listOf(
                     School(
-                        "title", "school", "cieszyn",
-                        Date(2), Date(1), listOf("detail1", "detail2")
+                        "Bachelor of Computer Science",
+                        "WSB University",
+                        "Dąbrowa Górnicza ",
+                        SimpleDate(Month.October, 2016),
+                        SimpleDate(Month.March, 2020),
+                        listOf(
+                            "President of the Student Research Circle - F44 Red",
+                            "Helped to organize many events and workshops for students",
+                            "Top 10% in class which resulted in scholarships each semester",
+                            "Participated in Erasmus+ Student Exchange Program in Horsens, Denmark. Learned how to work in an international environment, how to cooperate with people from different cultures and significantly improved English "
+                        )
                     )
                 )
             ),
