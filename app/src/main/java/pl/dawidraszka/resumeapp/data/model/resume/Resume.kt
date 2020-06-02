@@ -18,4 +18,8 @@ data class Resume(
     val volunteerWorkSection: VolunteerWorkSection? = null,
     val awardsSection: AwardsSection? = null,
     val hobbiesSection: HobbiesSection? = null
-)
+) {
+    fun getSections(): List<Section?> {
+        return listOf(objectiveSection, educationSection)
+    }
+}

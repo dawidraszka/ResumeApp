@@ -1,0 +1,3 @@
+package pl.dawidraszka.resumeapp.data.model.resume
+
+open class Section(val name: String)

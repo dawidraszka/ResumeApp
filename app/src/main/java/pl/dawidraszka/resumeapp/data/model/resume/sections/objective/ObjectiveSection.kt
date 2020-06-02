@@ -1,3 +1,5 @@
 package pl.dawidraszka.resumeapp.data.model.resume.sections.objective
 
-data class ObjectiveSection(val objective: String? = null)
+import pl.dawidraszka.resumeapp.data.model.resume.Section
+
+data class ObjectiveSection(val objective: String? = null) : Section("Objective")
