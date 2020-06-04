@@ -12,11 +12,17 @@ import pl.dawidraszka.resumeapp.ui.SectionView
 
 class EducationSectionView(context: Context) : SectionView(context) {
 
-    init {
+  /*  init {
         inflate(context, R.layout.section_education, frameLayout)
-    }
+    }*/
 
     override fun updateData(resume: Resume) {
         school_test_text_view.text = resume.educationSection?.schools?.get(0)?.name
+    }
+
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        inflate(context, R.layout.section_education, frameLayout)
+        setSectionName(R.string.education)
     }
 }

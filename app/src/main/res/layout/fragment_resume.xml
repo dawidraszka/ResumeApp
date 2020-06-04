@@ -6,20 +6,4 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.resume.ResumeFragment"
-    >
-
-  <!--  <include
-        layout="@layout/item_section"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <include
-        layout="@layout/item_section"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <include
-        layout="@layout/item_section"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />-->
-</LinearLayout>
+    />
