@@ -1,26 +1,20 @@
-package pl.dawidraszka.resumeapp.ui
+package pl.dawidraszka.resumeapp.ui.resume.sections
 
 import android.content.Context
-import android.view.ViewGroup
-import android.widget.TextView
 import kotlinx.android.synthetic.main.item_section.view.*
+import kotlinx.android.synthetic.main.section_objective.view.*
 import pl.dawidraszka.resumeapp.R
 import pl.dawidraszka.resumeapp.data.model.resume.Resume
 
 class ObjectiveSectionView(context: Context) : SectionView(context) {
-    val objectiveTextView = TextView(context)
 
-/*    init {
-        frameLayout.addView(objectiveTextView)
-    }*/
+    override fun getSectionName() = R.string.objective
 
     override fun updateData(resume: Resume) {
-        objectiveTextView.text = resume.objectiveSection?.objective
+        objective_text_view.text = resume.objectiveSection?.objective
     }
 
-    override fun onAttachedToWindow() {
-        super.onAttachedToWindow()
-        frameLayout.addView(objectiveTextView)
-        setSectionName(R.string.objective)
+    override fun prepareChildView() {
+        inflate(context, R.layout.section_objective, frameLayout)
     }
 }

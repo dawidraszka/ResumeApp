@@ -1,28 +1,20 @@
-package pl.dawidraszka.resumeapp
+package pl.dawidraszka.resumeapp.ui.resume.sections
 
 import android.content.Context
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
 import kotlinx.android.synthetic.main.item_section.view.*
-import kotlinx.android.synthetic.main.section_education.view.*
+import kotlinx.android.synthetic.main.section_complex_list.view.*
+import pl.dawidraszka.resumeapp.R
 import pl.dawidraszka.resumeapp.data.model.resume.Resume
-import pl.dawidraszka.resumeapp.data.model.resume.sections.objective.ObjectiveSection
-import pl.dawidraszka.resumeapp.ui.SectionView
 
 class EducationSectionView(context: Context) : SectionView(context) {
 
-  /*  init {
-        inflate(context, R.layout.section_education, frameLayout)
-    }*/
+    override fun getSectionName() = R.string.education
 
     override fun updateData(resume: Resume) {
         school_test_text_view.text = resume.educationSection?.schools?.get(0)?.name
     }
 
-    override fun onAttachedToWindow() {
-        super.onAttachedToWindow()
-        inflate(context, R.layout.section_education, frameLayout)
-        setSectionName(R.string.education)
+    override fun prepareChildView() {
+        inflate(context, R.layout.section_complex_list, frameLayout)
     }
 }
