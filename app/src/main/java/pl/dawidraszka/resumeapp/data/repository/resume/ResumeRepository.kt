@@ -32,7 +32,14 @@ object ResumeRepository {
     init {
         //TODO REMOVE
         val resumeTemp = Resume(
-            ObjectiveSection("Highly motivated graduate seeking an Junior Android Development position where I can utilize my software development skills to create mobile applications."),
+            ObjectiveSection("Highly motivated graduate seeking an Junior Android Development position where I can utilize my software development skills to create mobile applications."
+            +"Highly motivated graduate seeking an Junior Android Development position where I can utilize my software development skills to create mobile applications."+
+                    "Highly motivated graduate seeking an Junior Android Development position where I can utilize my software development skills to create mobile applications."
+            +"Highly motivated graduate seeking an Junior Android Development position where I can utilize my software development skills to create mobile applications."
+            +"Highly motivated graduate seeking an Junior Android Development position where I can utilize my software development skills to create mobile applications."
+            +"Highly motivated graduate seeking an Junior Android Development position where I can utilize my software development skills to create mobile applications."
+            +"Highly motivated graduate seeking an Junior Android Development position where I can utilize my software development skills to create mobile applications."
+            ),
             EducationSection(
                 listOf(
                     School(
@@ -50,7 +57,55 @@ object ResumeRepository {
                     )
                 )
             ),
-            TechnicalSkillsSection(listOf("technicalskill1")),
+            TechnicalSkillsSection(
+                listOf(
+                    "technicalskill1",
+                    "technicalskill2",
+                    "technicalskill3",
+                    "technicalskill4",
+                    "technicalskill5",
+                    "technicalskill1",
+                    "technicalskill2",
+                    "technicalskill3",
+                    "technicalskill4",
+                    "technicalskill5",
+                    "technicalskill1",
+                    "technicalskill2",
+                    "technicalskill3",
+                    "technicalskill4",
+                    "technicalskill5",
+                    "technicalskill1",
+                    "technicalskill2",
+                    "technicalskill3",
+                    "technicalskill4",
+                    "technicalskill5",
+                    "technicalskill1",
+                    "technicalskill2",
+                    "technicalskill3",
+                    "technicalskill4",
+                    "technicalskill5",
+                    "technicalskill1",
+                    "technicalskill2",
+                    "technicalskill3",
+                    "technicalskill4",
+                    "technicalskill5",
+                    "technicalskill1",
+                    "technicalskill2",
+                    "technicalskill3",
+                    "technicalskill4",
+                    "technicalskill5",
+                    "technicalskill1",
+                    "technicalskill2",
+                    "technicalskill3",
+                    "technicalskill4",
+                    "technicalskill5",
+                    "technicalskill1",
+                    "technicalskill2",
+                    "technicalskill3",
+                    "technicalskill4",
+                    "technicalskill5"
+                )
+            ),
             SkillsSection(listOf("skill1")),
             WorkExperienceSection(
                 listOf(

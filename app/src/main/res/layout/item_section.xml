@@ -8,12 +8,13 @@
 
     <TextView
         android:id="@+id/section_name_text_view"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:textAllCaps="true"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/expand_collapse_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

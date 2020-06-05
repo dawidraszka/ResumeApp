@@ -8,10 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.fragment_resume.view.*
-import pl.dawidraszka.resumeapp.EducationSectionView
 import pl.dawidraszka.resumeapp.R
-import pl.dawidraszka.resumeapp.ui.ObjectiveSectionView
-import pl.dawidraszka.resumeapp.ui.SectionView
+import pl.dawidraszka.resumeapp.ui.resume.sections.EducationSectionView
+import pl.dawidraszka.resumeapp.ui.resume.sections.ObjectiveSectionView
+import pl.dawidraszka.resumeapp.ui.resume.sections.SectionView
+import pl.dawidraszka.resumeapp.ui.resume.sections.TechnicalSkillsSectionView
 
 class ResumeFragment : Fragment() {
 
@@ -28,7 +29,11 @@ class ResumeFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_resume, container, false)
 
         sectionViews =
-            listOf(ObjectiveSectionView(requireContext()), EducationSectionView(requireContext()))
+            listOf(
+                ObjectiveSectionView(requireContext()),
+                EducationSectionView(requireContext()),
+                TechnicalSkillsSectionView(requireContext())
+            )
         sectionViews.forEach {
             root.resume_linear_layout.addView(it)
         }
@@ -40,7 +45,7 @@ class ResumeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         resumeViewModel.getResume().observe(viewLifecycleOwner, Observer { resume ->
-            sectionViews.forEach{it.updateData(resume)}
+            sectionViews.forEach { it.updateData(resume) }
         })
     }
 }

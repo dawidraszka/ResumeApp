@@ -2,4 +2,5 @@
 <resources>
     <string name="education">Edukacja</string>
     <string name="objective">Cel</string>
+    <string name="technical_skills">Umiejętności techniczne i języki programowania</string>
 </resources>
