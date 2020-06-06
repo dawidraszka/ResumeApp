@@ -10,15 +10,15 @@ import pl.dawidraszka.resumeapp.ui.ComplexListAdapter
 import pl.dawidraszka.resumeapp.ui.SimpleListAdapter
 import pl.dawidraszka.resumeapp.ui.resume.NonScrollableLayoutManager
 
-class EducationSectionView(context: Context) : SectionView(context) {
+class WorkExperienceSectionView(context: Context) : SectionView(context) {
 
-    override fun getSectionName() = R.string.education
+    override fun getSectionName() = R.string.work_experience
 
     override fun updateData(resume: Resume) {
         list_recycler_view.apply {
             layoutManager = NonScrollableLayoutManager(context)
-            if (resume.educationSection?.schools != null)
-                adapter = ComplexListAdapter(resume.educationSection.schools)
+            if (resume.workExperienceSection?.workExperience != null)
+                adapter = ComplexListAdapter(resume.workExperienceSection.workExperience)
         }
     }
 

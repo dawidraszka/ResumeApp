@@ -9,10 +9,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.fragment_resume.view.*
 import pl.dawidraszka.resumeapp.R
-import pl.dawidraszka.resumeapp.ui.resume.sections.EducationSectionView
-import pl.dawidraszka.resumeapp.ui.resume.sections.ObjectiveSectionView
-import pl.dawidraszka.resumeapp.ui.resume.sections.SectionView
-import pl.dawidraszka.resumeapp.ui.resume.sections.TechnicalSkillsSectionView
+import pl.dawidraszka.resumeapp.data.model.resume.sections.skills.SkillsSection
+import pl.dawidraszka.resumeapp.data.model.resume.sections.workexperience.WorkExperience
+import pl.dawidraszka.resumeapp.ui.resume.sections.*
 
 class ResumeFragment : Fragment() {
 
@@ -31,8 +30,11 @@ class ResumeFragment : Fragment() {
         sectionViews =
             listOf(
                 ObjectiveSectionView(requireContext()),
+                WorkExperienceSectionView(requireContext()),
                 EducationSectionView(requireContext()),
-                TechnicalSkillsSectionView(requireContext())
+
+                TechnicalSkillsSectionView(requireContext()),
+                SkillsSectionView(requireContext())
             )
         sectionViews.forEach {
             root.resume_linear_layout.addView(it)

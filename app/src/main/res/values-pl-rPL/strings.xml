@@ -3,4 +3,6 @@
     <string name="education">Edukacja</string>
     <string name="objective">Cel</string>
     <string name="technical_skills">Umiejętności techniczne i języki programowania</string>
+    <string name="skills">Umiejętności</string>
+    <string name="work_experience">Doświadczenie zawodowe</string>
 </resources>

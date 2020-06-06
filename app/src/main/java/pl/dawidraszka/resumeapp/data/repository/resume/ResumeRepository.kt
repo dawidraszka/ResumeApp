@@ -1,7 +1,5 @@
 package pl.dawidraszka.resumeapp.data.repository.resume
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.firestore.ktx.firestore
@@ -22,7 +20,6 @@ import pl.dawidraszka.resumeapp.data.model.resume.sections.volunteerwork.Volunte
 import pl.dawidraszka.resumeapp.data.model.resume.sections.volunteerwork.VolunteerWorkSection
 import pl.dawidraszka.resumeapp.data.model.resume.sections.workexperience.WorkExperience
 import pl.dawidraszka.resumeapp.data.model.resume.sections.workexperience.WorkExperienceSection
-import java.util.*
 
 object ResumeRepository {
     val firestoreDatabase = Firebase.firestore
@@ -32,18 +29,12 @@ object ResumeRepository {
     init {
         //TODO REMOVE
         val resumeTemp = Resume(
-            ObjectiveSection("Highly motivated graduate seeking an Junior Android Development position where I can utilize my software development skills to create mobile applications."
-            +"Highly motivated graduate seeking an Junior Android Development position where I can utilize my software development skills to create mobile applications."+
-                    "Highly motivated graduate seeking an Junior Android Development position where I can utilize my software development skills to create mobile applications."
-            +"Highly motivated graduate seeking an Junior Android Development position where I can utilize my software development skills to create mobile applications."
-            +"Highly motivated graduate seeking an Junior Android Development position where I can utilize my software development skills to create mobile applications."
-            +"Highly motivated graduate seeking an Junior Android Development position where I can utilize my software development skills to create mobile applications."
-            +"Highly motivated graduate seeking an Junior Android Development position where I can utilize my software development skills to create mobile applications."
-            ),
+            ObjectiveSection("Highly motivated graduate seeking an Junior Android Development position where I can utilize my software development skills to create mobile applications."),
             EducationSection(
                 listOf(
                     School(
-                        "Bachelor of Computer Science",
+                        "Bachelor of Computer Science" +
+                                "Bachelor",
                         "WSB University",
                         "Dąbrowa Górnicza ",
                         SimpleDate(Month.October, 2016),
@@ -59,79 +50,68 @@ object ResumeRepository {
             ),
             TechnicalSkillsSection(
                 listOf(
-                    "technicalskill1",
-                    "technicalskill2",
-                    "technicalskill3",
-                    "technicalskill4",
-                    "technicalskill5",
-                    "technicalskill1",
-                    "technicalskill2",
-                    "technicalskill3",
-                    "technicalskill4",
-                    "technicalskill5",
-                    "technicalskill1",
-                    "technicalskill2",
-                    "technicalskill3",
-                    "technicalskill4",
-                    "technicalskill5",
-                    "technicalskill1",
-                    "technicalskill2",
-                    "technicalskill3",
-                    "technicalskill4",
-                    "technicalskill5",
-                    "technicalskill1",
-                    "technicalskill2",
-                    "technicalskill3",
-                    "technicalskill4",
-                    "technicalskill5",
-                    "technicalskill1",
-                    "technicalskill2",
-                    "technicalskill3",
-                    "technicalskill4",
-                    "technicalskill5",
-                    "technicalskill1",
-                    "technicalskill2",
-                    "technicalskill3",
-                    "technicalskill4",
-                    "technicalskill5",
-                    "technicalskill1",
-                    "technicalskill2",
-                    "technicalskill3",
-                    "technicalskill4",
-                    "technicalskill5",
-                    "technicalskill1",
-                    "technicalskill2",
-                    "technicalskill3",
-                    "technicalskill4",
-                    "technicalskill5"
+                    "Java 8 – ability to create working, native Android applications using lambdas, interfaces, collections, inheritance and other functionalities. ",
+                    "Known frameworks, patterns and techniques: Firebase, Room, Retrofit, CameraX, MVVM, LiveData, Singleton pattern, Android SDK, Android Resources, Android Permissions, adapters. ",
+                    "Kotlin – basics, but quickly improving",
+                    "Unity and C# - ability to create simple video games",
+                    "Swift – basics, but willing to learn more in the future"
                 )
             ),
-            SkillsSection(listOf("skill1")),
+            SkillsSection(
+                listOf(
+                    "Quick and keen learner ",
+                    "Experienced in working as part of a team ",
+                    "Ability to create Android applications using modern techniques and frameworks",
+                    "Fluent in English and Polish "
+                )
+            ),
             WorkExperienceSection(
                 listOf(
                     WorkExperience(
-                        "jobtitle1",
-                        "company1", "cieszyn", Date(1), Date
-                            (2), listOf("detail1")
+                        "Java Developer Intern",
+                        "Accenture Technology",
+                        "Katowice",
+                        SimpleDate(Month.April, 2019),
+                        SimpleDate(Month.July, 2019),
+                        listOf(
+                            "Collaborated with team to develop new features for ERP system using Java",
+                            "Helped to create and expand company wiki - which helps new employees become familiarized with the system",
+                            "Learned how to organize work using Jira "
+                        )
+                    ),
+                    WorkExperience(
+                        "Android Developer Intern",
+                        "ProfitCard Ltd.",
+                        "Cieszyn",
+                        SimpleDate(Month.April, 2017),
+                        SimpleDate(Month.July, 2017),
+                        listOf(
+                            "Created Android application based on client requirements",
+                            "Learned best software development practices",
+                            "Collaborated with team to ensure compatibility with internal server"
+                        )
                     )
                 )
             ),
             VolunteerWorkSection(
                 listOf(
                     VolunteerWork(
-                        "volunter1", "org1",
-                        "city1", Date(1), Date
-                            (2), listOf("detail1")
+                        "Lecturer and organizer",
+                        "F44 Red",
+                        " Dąbrowa Górnicza",
+                        SimpleDate(Month.October, 2017),
+                        SimpleDate(Month.March, 2020),
+                        listOf("detail1")
                     )
                 )
             ),
             AwardsSection(List(1) {
                 Award(
-                    "award1", "city2", Date(1),
-                    listOf("detail5")
+                    "Second place in Sensei Game Jam", "Wrocław", SimpleDate(Month.December, 2017),
+                    listOf("Awarded second place for participation and game creation during Sensei Game Jam in Wrocław")
                 )
             }),
-            HobbiesSection(listOf("hobby1", "hobby2"))
+            HobbiesSection(listOf("Board games", "Lego", "Science", "Fantasy books", "Electronics"))
         )
 
         firestoreDatabase.collection("resumes").document("resume").set(resumeTemp)
@@ -143,7 +123,6 @@ object ResumeRepository {
             .addOnSuccessListener {
                 val resumeTemp = it.toObject<Resume>()
                 resume.value = resumeTemp
-                Log.d(TAG, "${it.id} => ${it.data}")
             }
         return resume
     }
