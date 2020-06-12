@@ -20,8 +20,11 @@ import pl.dawidraszka.resumeapp.data.model.resume.sections.volunteerwork.Volunte
 import pl.dawidraszka.resumeapp.data.model.resume.sections.volunteerwork.VolunteerWorkSection
 import pl.dawidraszka.resumeapp.data.model.resume.sections.workexperience.WorkExperience
 import pl.dawidraszka.resumeapp.data.model.resume.sections.workexperience.WorkExperienceSection
+import javax.inject.Inject
+import javax.inject.Singleton
 
-object ResumeRepository {
+@Singleton
+class ResumeRepository @Inject constructor() {
     val firestoreDatabase = Firebase.firestore
 
     val resume = MutableLiveData<Resume>()
