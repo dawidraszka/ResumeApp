@@ -7,7 +7,7 @@ import pl.dawidraszka.resumeapp.R
 import pl.dawidraszka.resumeapp.data.model.resume.Resume
 import javax.inject.Inject
 
-class ObjectiveSectionView @Inject constructor(context: Context) : SectionView(context) {
+class HobbiesSectionView @Inject constructor(context: Context) : SectionView(context) {
 
     override fun getSectionName() = R.string.objective
 

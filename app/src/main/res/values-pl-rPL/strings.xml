@@ -5,4 +5,7 @@
     <string name="technical_skills">Umiejętności techniczne i języki programowania</string>
     <string name="skills">Umiejętności</string>
     <string name="work_experience">Doświadczenie zawodowe</string>
+    <string name="volunteer_work">Praca charytatywna</string>
+    <string name="awards_and_honours">Nagrody i wyróżnienia</string>
+    <string name="hobbies">Zainteresowania</string>
 </resources>

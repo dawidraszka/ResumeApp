@@ -13,8 +13,11 @@
 
     <string name="resume_second">Resume Second</string>
     <string name="education">Education</string>
-    <string name="work_experience">Work Experience</string>
+    <string name="work_experience">Work experience</string>
     <string name="objective">Objective</string>
     <string name="technical_skills">Technical skills and programming languages</string>
     <string name="skills">Skills</string>
+    <string name="volunteer_work">Volunteer work</string>
+    <string name="awards_and_honours">Awards and honours</string>
+    <string name="hobbies">Hobbies</string>
 </resources>

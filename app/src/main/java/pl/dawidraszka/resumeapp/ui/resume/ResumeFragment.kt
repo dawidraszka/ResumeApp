@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.fragment_resume.view.*
-import pl.dawidraszka.ResumeApplication
+import pl.dawidraszka.resumeapp.ResumeApplication
 import pl.dawidraszka.resumeapp.R
 import pl.dawidraszka.resumeapp.ui.resume.sections.*
 import javax.inject.Inject
@@ -15,7 +15,7 @@ import javax.inject.Inject
 class ResumeFragment : Fragment() {
 
     @Inject lateinit var resumeViewModel: ResumeViewModel
-    private lateinit var sectionViews: List<SectionView>
+    @Inject lateinit var sectionViews: List<@JvmSuppressWildcards SectionView>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,14 +28,6 @@ class ResumeFragment : Fragment() {
 
         val root = inflater.inflate(R.layout.fragment_resume, container, false)
 
-        sectionViews =
-            listOf(
-                ObjectiveSectionView(context),
-                WorkExperienceSectionView(context),
-                EducationSectionView(context),
-                TechnicalSkillsSectionView(context),
-                SkillsSectionView(context)
-            )
         sectionViews.forEach {
             root.resume_linear_layout.addView(it)
         }

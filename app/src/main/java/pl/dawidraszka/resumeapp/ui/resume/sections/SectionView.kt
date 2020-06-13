@@ -7,6 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import kotlinx.android.synthetic.main.item_section.view.*
 import pl.dawidraszka.resumeapp.R
 import pl.dawidraszka.resumeapp.data.model.resume.Resume
+import javax.inject.Inject
 
 abstract class SectionView(context: Context) : ConstraintLayout(context) {
 

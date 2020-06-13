@@ -9,8 +9,9 @@ import pl.dawidraszka.resumeapp.data.model.resume.Resume
 import pl.dawidraszka.resumeapp.ui.ComplexListAdapter
 import pl.dawidraszka.resumeapp.ui.SimpleListAdapter
 import pl.dawidraszka.resumeapp.ui.resume.NonScrollableLayoutManager
+import javax.inject.Inject
 
-class WorkExperienceSectionView(context: Context) : SectionView(context) {
+class WorkExperienceSectionView @Inject constructor(context: Context) : SectionView(context) {
 
     override fun getSectionName() = R.string.work_experience
 

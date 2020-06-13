@@ -11,15 +11,15 @@ import pl.dawidraszka.resumeapp.ui.SimpleListAdapter
 import pl.dawidraszka.resumeapp.ui.resume.NonScrollableLayoutManager
 import javax.inject.Inject
 
-class EducationSectionView @Inject constructor(context: Context) : SectionView(context) {
+class VolunteerWorkSectionView @Inject constructor(context: Context) : SectionView(context) {
 
-    override fun getSectionName() = R.string.education
+    override fun getSectionName() = R.string.volunteer_work
 
     override fun updateData(resume: Resume) {
         list_recycler_view.apply {
             layoutManager = NonScrollableLayoutManager(context)
-            if (resume.educationSection?.schools != null)
-                adapter = ComplexListAdapter(resume.educationSection.schools)
+            if (resume.volunteerWorkSection?.volunteerWork != null)
+                adapter = ComplexListAdapter(resume.volunteerWorkSection.volunteerWork)
         }
     }
 
