@@ -14,8 +14,8 @@ class SectionViewsModule{
             ObjectiveSectionView(context),
             WorkExperienceSectionView(context),
             EducationSectionView(context),
-            TechnicalSkillsSectionView(context),
             SkillsSectionView(context),
+            TechnicalSkillsSectionView(context),
             VolunteerWorkSectionView(context),
             AwardsAndHonoursSectionView(context),
             HobbiesSectionView(context)
