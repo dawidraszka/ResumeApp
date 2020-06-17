@@ -23,5 +23,12 @@ class SkillsSectionView @Inject constructor(context: Context) : SectionView(cont
 
     override fun prepareChildView() {
         inflate(context, R.layout.section_list, frameLayout)
+
+        
     }
+}
+
+
+fun changeString(stringToRevert: String): String {
+    return stringToRevert.dropLast(3)
 }

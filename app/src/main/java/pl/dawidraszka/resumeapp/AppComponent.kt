@@ -4,6 +4,7 @@ import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 import pl.dawidraszka.resumeapp.data.repository.resume.ResumeRepository
+import pl.dawidraszka.resumeapp.ui.contact.ContactFragment
 import pl.dawidraszka.resumeapp.ui.resume.ResumeFragment
 import pl.dawidraszka.resumeapp.ui.resume.sections.SectionView
 import javax.inject.Singleton
@@ -13,6 +14,7 @@ import javax.inject.Singleton
 interface AppComponent {
     fun resumeRepository(): ResumeRepository
     fun inject(fragment: ResumeFragment)
+    fun inject(fragment: ContactFragment)
     fun inject(views: List<@JvmSuppressWildcards SectionView>)
 
     @Component.Factory
