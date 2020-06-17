@@ -20,4 +20,6 @@
     <string name="volunteer_work">Volunteer work</string>
     <string name="awards_and_honours">Awards and honours</string>
     <string name="hobbies">Hobbies</string>
+    <string name="dawid_raszka" translatable="false">Dawid Raszka</string>
+    <string name="contact_me">Contact me using one of the options below:</string>
 </resources>

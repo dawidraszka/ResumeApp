@@ -37,7 +37,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:menu="@menu/activity_main_drawer" />
 
-        <pl.dawidraszka.resumeapp.ui.GitHubButton
+        <pl.dawidraszka.resumeapp.ui.buttons.GitHubButton
             android:id="@+id/github_button"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
@@ -52,7 +52,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/ic_github" />
 
-        <pl.dawidraszka.resumeapp.ui.LinkedinButton
+        <pl.dawidraszka.resumeapp.ui.buttons.LinkedinButton
             android:id="@+id/linkedin_button"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
@@ -64,7 +64,7 @@
             app:layout_constraintTop_toTopOf="@+id/github_button"
             app:srcCompat="@drawable/ic_linkedin" />
 
-        <pl.dawidraszka.resumeapp.ui.EmailButton
+        <pl.dawidraszka.resumeapp.ui.buttons.EmailButton
             android:id="@+id/gmail_buttom"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"

@@ -1,4 +1,4 @@
-package pl.dawidraszka.resumeapp.ui
+package pl.dawidraszka.resumeapp.ui.buttons
 
 import android.content.Context
 import android.content.Intent
