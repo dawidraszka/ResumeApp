@@ -14,6 +14,6 @@ data class VolunteerWork(
 ) : Complexable {
     override fun toComplexItem(): ComplexItem = ComplexItem(
         title, "$startDate - $endDate",
-        "$organization*$city", details
+        "$organization • $city", details
     )
 }

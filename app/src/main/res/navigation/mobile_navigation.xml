@@ -9,25 +9,7 @@
         android:id="@+id/nav_resume"
         android:name="pl.dawidraszka.resumeapp.ui.resume.ResumeFragment"
         android:label="@string/menu_resume"
-        tools:layout="@layout/fragment_resume">
-
-        <action
-            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
-            app:destination="@id/nav_resume_second" />
-    </fragment>
-    <fragment
-        android:id="@+id/nav_resume_second"
-        android:name="pl.dawidraszka.resumeapp.ui.resume.HomeSecondFragment"
-        android:label="@string/resume_second"
-        tools:layout="@layout/fragment_home_second">
-        <action
-            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
-            app:destination="@id/nav_resume" />
-
-        <argument
-            android:name="myArg"
-            app:argType="string" />
-    </fragment>
+        tools:layout="@layout/fragment_resume"/>
 
     <fragment
         android:id="@+id/nav_projects"

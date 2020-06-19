@@ -10,12 +10,11 @@ import pl.dawidraszka.resumeapp.ui.resume.sections.SectionView
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [SectionViewsModule::class])
+@Component
 interface AppComponent {
     fun resumeRepository(): ResumeRepository
     fun inject(fragment: ResumeFragment)
     fun inject(fragment: ContactFragment)
-    fun inject(views: List<@JvmSuppressWildcards SectionView>)
 
     @Component.Factory
     interface Factory {

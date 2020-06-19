@@ -14,6 +14,6 @@ data class WorkExperience(
 ): Complexable {
     override fun toComplexItem(): ComplexItem = ComplexItem(
         jobTitle, "$startDate - $endDate",
-        "$company*$city", details
+        "$company • $city", details
     )
 }

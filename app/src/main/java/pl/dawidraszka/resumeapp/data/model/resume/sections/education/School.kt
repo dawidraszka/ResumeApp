@@ -14,6 +14,6 @@ data class School(
 ) : Complexable {
     override fun toComplexItem(): ComplexItem = ComplexItem(
         title, "$startDate - $endDate",
-        "$name*$city", details
+        "$name • $city", details
     )
 }

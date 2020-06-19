@@ -2,12 +2,58 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
 
     <LinearLayout
         android:id="@+id/resume_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:divider="@drawable/divider"
         android:orientation="vertical"
-        tools:context=".ui.resume.ResumeFragment" />
+        android:padding="8dp"
+        android:showDividers="middle"
+        tools:context=".ui.resume.ResumeFragment">
+
+        <pl.dawidraszka.resumeapp.ui.resume.sections.ObjectiveSectionView
+            android:id="@+id/objective_section_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <pl.dawidraszka.resumeapp.ui.resume.sections.WorkExperienceSectionView
+            android:id="@+id/work_experience_section_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <pl.dawidraszka.resumeapp.ui.resume.sections.EducationSectionView
+            android:id="@+id/education_section_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <pl.dawidraszka.resumeapp.ui.resume.sections.SkillsSectionView
+            android:id="@+id/skills_section_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <pl.dawidraszka.resumeapp.ui.resume.sections.TechnicalSkillsSectionView
+            android:id="@+id/technical_skills_section_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <pl.dawidraszka.resumeapp.ui.resume.sections.VolunteerWorkSectionView
+            android:id="@+id/volunteer_work_section_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <pl.dawidraszka.resumeapp.ui.resume.sections.AwardsAndHonoursSectionView
+            android:id="@+id/awards_and_honours_section_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <pl.dawidraszka.resumeapp.ui.resume.sections.HobbiesSectionView
+            android:id="@+id/hobbies_section_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 </ScrollView>

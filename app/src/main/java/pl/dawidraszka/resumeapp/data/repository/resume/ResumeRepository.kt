@@ -104,7 +104,11 @@ class ResumeRepository @Inject constructor() {
                         " Dąbrowa Górnicza",
                         SimpleDate(Month.October, 2017),
                         SimpleDate(Month.March, 2020),
-                        listOf("detail1")
+                        listOf(
+                            "Helped to organize several events to help students learn basics of game and Android development",
+                            "Lectured students about game development",
+                            "Participated in a series of workshops for kids about game development as a teacher"
+                        )
                     )
                 )
             ),

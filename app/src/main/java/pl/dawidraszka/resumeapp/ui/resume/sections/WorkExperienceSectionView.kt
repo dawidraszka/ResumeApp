@@ -1,6 +1,7 @@
 package pl.dawidraszka.resumeapp.ui.resume.sections
 
 import android.content.Context
+import android.util.AttributeSet
 import kotlinx.android.synthetic.main.item_complex_list.view.*
 import kotlinx.android.synthetic.main.item_section.view.*
 import kotlinx.android.synthetic.main.section_list.view.*
@@ -11,12 +12,13 @@ import pl.dawidraszka.resumeapp.ui.SimpleListAdapter
 import pl.dawidraszka.resumeapp.ui.resume.NonScrollableLayoutManager
 import javax.inject.Inject
 
-class WorkExperienceSectionView @Inject constructor(context: Context) : SectionView(context) {
+class WorkExperienceSectionView @Inject constructor(context: Context, attrs: AttributeSet) : SectionView(context, attrs) {
 
     override fun getSectionName() = R.string.work_experience
 
     override fun updateData(resume: Resume) {
         list_recycler_view.apply {
+            hideLoading()
             layoutManager = NonScrollableLayoutManager(context)
             if (resume.workExperienceSection?.workExperience != null)
                 adapter = ComplexListAdapter(resume.workExperienceSection.workExperience)
