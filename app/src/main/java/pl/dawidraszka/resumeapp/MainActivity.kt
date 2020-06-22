@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.snackbar.Snackbar
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).show()
         }
 
-        val navController : NavController = findNavController(R.id.nav_host_fragment)
+        val navController: NavController = findNavController(R.id.nav_host_fragment)
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -46,9 +47,9 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-/*    override fun onSupportNavigateUp(): Boolean {
+    override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
-    }*/
+    }
 }
 

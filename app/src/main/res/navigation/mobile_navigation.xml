@@ -15,11 +15,21 @@
         android:id="@+id/nav_projects"
         android:name="pl.dawidraszka.resumeapp.ui.projects.ProjectsFragment"
         android:label="@string/menu_projects"
-        tools:layout="@layout/fragment_projects" />
+        tools:layout="@layout/fragment_projects" >
+        <action
+            android:id="@+id/action_nav_projects_to_nav_project_details"
+            app:destination="@id/nav_project_details" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_contact"
         android:name="pl.dawidraszka.resumeapp.ui.contact.ContactFragment"
         android:label="@string/menu_contact"
         tools:layout="@layout/fragment_contact" />
+
+    <fragment
+        android:id="@+id/nav_project_details"
+        android:name="pl.dawidraszka.resumeapp.ui.projects.ProjectDetailsFragment"
+        android:label="tEST"
+        tools:layout="@layout/fragment_project_details" />
 </navigation>

@@ -15,8 +15,7 @@ class SimpleListAdapter(private val items: List<String>) :
     }
 
     override fun onBindViewHolder(holder: SimpleListViewHolder, position: Int) {
-        val item: String = items[position]
-        holder.bind(item)
+        holder.bind(items[position])
     }
 
     override fun getItemCount(): Int = items.size

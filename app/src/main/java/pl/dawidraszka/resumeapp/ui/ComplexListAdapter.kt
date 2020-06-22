@@ -21,8 +21,7 @@ class ComplexListAdapter(private val items: List<Complexable>) :
     }
 
     override fun onBindViewHolder(holder: ComplexListViewHolder, position: Int) {
-        val item = items[position]
-        holder.bind(item)
+        holder.bind(items[position])
     }
 
     override fun getItemCount(): Int = items.size
