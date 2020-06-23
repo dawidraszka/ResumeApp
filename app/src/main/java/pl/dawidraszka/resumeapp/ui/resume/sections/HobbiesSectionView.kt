@@ -10,7 +10,8 @@ import pl.dawidraszka.resumeapp.ui.SimpleListAdapter
 import pl.dawidraszka.resumeapp.ui.resume.NonScrollableLayoutManager
 import javax.inject.Inject
 
-class HobbiesSectionView @Inject constructor(context: Context, attrs: AttributeSet) : SectionView(context, attrs) {
+class HobbiesSectionView @Inject constructor(context: Context, attrs: AttributeSet) :
+    SectionView(context, attrs) {
 
     override fun getSectionName() = R.string.hobbies
 

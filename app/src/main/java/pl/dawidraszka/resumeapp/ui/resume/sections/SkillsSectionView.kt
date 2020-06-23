@@ -10,7 +10,8 @@ import pl.dawidraszka.resumeapp.ui.SimpleListAdapter
 import pl.dawidraszka.resumeapp.ui.resume.NonScrollableLayoutManager
 import javax.inject.Inject
 
-class SkillsSectionView @Inject constructor(context: Context, attrs: AttributeSet) : SectionView(context, attrs) {
+class SkillsSectionView @Inject constructor(context: Context, attrs: AttributeSet) :
+    SectionView(context, attrs) {
 
     override fun getSectionName() = R.string.skills
 
@@ -26,6 +27,6 @@ class SkillsSectionView @Inject constructor(context: Context, attrs: AttributeSe
     override fun prepareChildView() {
         inflate(context, R.layout.section_list, frameLayout)
 
-        
+
     }
 }

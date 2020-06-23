@@ -6,11 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import kotlinx.android.synthetic.main.fragment_resume.*
 import kotlinx.android.synthetic.main.fragment_resume.view.*
 import pl.dawidraszka.resumeapp.R
 import pl.dawidraszka.resumeapp.ResumeApplication
-import pl.dawidraszka.resumeapp.ui.resume.sections.*
+import pl.dawidraszka.resumeapp.ui.resume.sections.SectionView
 import javax.inject.Inject
 
 class ResumeFragment : Fragment() {
@@ -38,7 +37,7 @@ class ResumeFragment : Fragment() {
             root.awards_and_honours_section_view,
             root.hobbies_section_view
         )
-        
+
         return root
     }
 

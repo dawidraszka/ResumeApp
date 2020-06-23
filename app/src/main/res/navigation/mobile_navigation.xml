@@ -9,13 +9,13 @@
         android:id="@+id/nav_resume"
         android:name="pl.dawidraszka.resumeapp.ui.resume.ResumeFragment"
         android:label="@string/menu_resume"
-        tools:layout="@layout/fragment_resume"/>
+        tools:layout="@layout/fragment_resume" />
 
     <fragment
         android:id="@+id/nav_projects"
         android:name="pl.dawidraszka.resumeapp.ui.projects.ProjectsFragment"
         android:label="@string/menu_projects"
-        tools:layout="@layout/fragment_projects" >
+        tools:layout="@layout/fragment_projects">
         <action
             android:id="@+id/action_nav_projects_to_nav_project_details"
             app:destination="@id/nav_project_details" />
@@ -30,6 +30,5 @@
     <fragment
         android:id="@+id/nav_project_details"
         android:name="pl.dawidraszka.resumeapp.ui.projects.ProjectDetailsFragment"
-        android:label="tEST"
-        tools:layout="@layout/fragment_project_details" />
+        tools:layout="@layout/fragment_project_details"/>
 </navigation>

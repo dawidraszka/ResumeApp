@@ -10,7 +10,8 @@ import pl.dawidraszka.resumeapp.ui.SimpleListAdapter
 import pl.dawidraszka.resumeapp.ui.resume.NonScrollableLayoutManager
 import javax.inject.Inject
 
-class TechnicalSkillsSectionView @Inject constructor(context: Context, attrs: AttributeSet) : SectionView(context, attrs) {
+class TechnicalSkillsSectionView @Inject constructor(context: Context, attrs: AttributeSet) :
+    SectionView(context, attrs) {
 
     override fun getSectionName() = R.string.technical_skills
 

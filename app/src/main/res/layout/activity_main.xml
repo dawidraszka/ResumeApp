@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#FFF"
+        android:background="#F5F5F5"
         android:elevation="16dp"
         android:orientation="vertical">
 
@@ -30,6 +30,8 @@
             android:layout_marginBottom="8dp"
             android:fitsSystemWindows="true"
             app:elevation="0dp"
+            app:itemTextColor="@color/textPrimary"
+            app:itemIconTint="@color/iconPrimary"
             app:headerLayout="@layout/nav_header_main"
             app:layout_constraintBottom_toTopOf="@+id/github_button"
             app:layout_constraintEnd_toEndOf="parent"

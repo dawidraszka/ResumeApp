@@ -6,9 +6,13 @@
     <color name="colorSecondary">#ff9800</color>
     <color name="colorSecondaryLight">#ffc947</color>
     <color name="colorSecondaryDark">#c66900</color>
+    <color name="white">#FFF</color>
 
     <color name="textPrimary">#000000</color>
-    <color name="textSecondary">#99000000</color>
+    <color name="textSecondary">#B3000000</color>
 
-    <color name="roundBackground">#E6FFFFFF</color>
+    <color name="iconPrimary">#000000</color>
+    <color name="iconSecondary">#B3000000</color>
+
+    <color name="roundBackground">@color/colorSecondary</color>
 </resources>

@@ -1,7 +1,6 @@
 package pl.dawidraszka.resumeapp.ui.projects
 
 import androidx.lifecycle.ViewModel
-import pl.dawidraszka.resumeapp.data.model.projects.Project
 import pl.dawidraszka.resumeapp.data.repository.projects.ProjectsRepository
 import javax.inject.Inject
 

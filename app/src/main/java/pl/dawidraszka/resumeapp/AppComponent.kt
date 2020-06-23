@@ -9,7 +9,6 @@ import pl.dawidraszka.resumeapp.ui.contact.ContactFragment
 import pl.dawidraszka.resumeapp.ui.projects.ProjectDetailsFragment
 import pl.dawidraszka.resumeapp.ui.projects.ProjectsFragment
 import pl.dawidraszka.resumeapp.ui.resume.ResumeFragment
-import pl.dawidraszka.resumeapp.ui.resume.sections.SectionView
 import javax.inject.Singleton
 
 @Singleton

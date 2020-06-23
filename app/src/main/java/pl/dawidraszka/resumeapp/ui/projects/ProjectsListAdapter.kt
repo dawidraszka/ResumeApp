@@ -8,7 +8,10 @@ import kotlinx.android.synthetic.main.item_project.view.*
 import pl.dawidraszka.resumeapp.R
 import pl.dawidraszka.resumeapp.data.model.projects.Project
 
-class ProjectsListAdapter(private val projects: List<Project>, private val onItemClicked: OnItemClicked) :
+class ProjectsListAdapter(
+    private val projects: List<Project>,
+    private val onItemClicked: OnItemClicked
+) :
     RecyclerView.Adapter<ProjectViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProjectViewHolder {
@@ -33,14 +36,19 @@ class ProjectViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     fun bind(project: Project, onItemClicked: OnItemClicked) {
         itemView.apply {
             with(project) {
-                language_text_view.text = language
-                Glide.with(context).load("https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/8c/c9/d4/8cc9d492-6487-0444-741b-8e11dc9c6c1a/pr_source.png/300x0w.jpg").into(screenshot_1)
-                Glide.with(context).load("https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/8c/c9/d4/8cc9d492-6487-0444-741b-8e11dc9c6c1a/pr_source.png/300x0w.jpg").into(screenshot_2)
-                Glide.with(context).load("https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/8c/c9/d4/8cc9d492-6487-0444-741b-8e11dc9c6c1a/pr_source.png/300x0w.jpg").into(screenshot_3)
+                Glide.with(context)
+                    .load("https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/8c/c9/d4/8cc9d492-6487-0444-741b-8e11dc9c6c1a/pr_source.png/300x0w.jpg")
+                    .into(screenshot_1)
+                Glide.with(context)
+                    .load("https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/8c/c9/d4/8cc9d492-6487-0444-741b-8e11dc9c6c1a/pr_source.png/300x0w.jpg")
+                    .into(screenshot_2)
+                Glide.with(context)
+                    .load("https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/8c/c9/d4/8cc9d492-6487-0444-741b-8e11dc9c6c1a/pr_source.png/300x0w.jpg")
+                    .into(screenshot_3)
                 name_text_view.text = name
                 description_text_view.text = description
 
-                learn_more_button.setOnClickListener{
+                learn_more_button.setOnClickListener {
                     onItemClicked.onClick(project)
                 }
             }
@@ -48,6 +56,6 @@ class ProjectViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     }
 }
 
-interface OnItemClicked{
+interface OnItemClicked {
     fun onClick(project: Project)
 }

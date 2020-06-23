@@ -2,14 +2,14 @@ package pl.dawidraszka.resumeapp.ui.resume.sections
 
 import android.content.Context
 import android.util.AttributeSet
-import android.view.LayoutInflater
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import kotlinx.android.synthetic.main.item_section.view.*
 import pl.dawidraszka.resumeapp.R
 import pl.dawidraszka.resumeapp.data.model.resume.Resume
 
-abstract class SectionView(context: Context, attrs: AttributeSet) : ConstraintLayout(context, attrs) {
+abstract class SectionView(context: Context, attrs: AttributeSet) :
+    ConstraintLayout(context, attrs) {
 
     abstract fun updateData(resume: Resume)
     abstract fun prepareChildView()

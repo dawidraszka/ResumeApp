@@ -11,7 +11,7 @@ data class WorkExperience(
     val startDate: SimpleDate? = null,
     val endDate: SimpleDate? = null,
     val details: List<String>? = null
-): Complexable {
+) : Complexable {
     override fun toComplexItem(): ComplexItem = ComplexItem(
         jobTitle, "$startDate - $endDate",
         "$company • $city", details

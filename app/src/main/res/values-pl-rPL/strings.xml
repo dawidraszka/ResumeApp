@@ -9,4 +9,8 @@
     <string name="awards_and_honours">Nagrody i wyróżnienia</string>
     <string name="hobbies">Zainteresowania</string>
     <string name="contact_me">Skontaktuj się ze mną przy użyciu poniższych opcji:</string>
+    <string name="language_used">Język:</string>
+    <string name="technologies_used">Technologie:</string>
+    <string name="learn_more">więcej...</string>
+    <string name="description">Opis:</string>
 </resources>

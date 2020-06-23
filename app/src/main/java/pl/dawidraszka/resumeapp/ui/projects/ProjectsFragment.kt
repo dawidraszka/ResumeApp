@@ -1,7 +1,6 @@
 package pl.dawidraszka.resumeapp.ui.projects
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +12,6 @@ import kotlinx.android.synthetic.main.fragment_projects.*
 import pl.dawidraszka.resumeapp.R
 import pl.dawidraszka.resumeapp.ResumeApplication
 import pl.dawidraszka.resumeapp.data.model.projects.Project
-import pl.dawidraszka.resumeapp.ui.SimpleListAdapter
 import javax.inject.Inject
 
 class ProjectsFragment : Fragment(), OnItemClicked {
