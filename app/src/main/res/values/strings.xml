@@ -1,11 +1,10 @@
 <resources>
-    <string name="app_name">ResumeApp</string>
+    <string name="app_name">Dawid Raszka Resume</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Dawid Raszka Resume</string>
-    <string name="nav_header_subtitle">raszka.dawid@gmail.com</string>
+    <string name="nav_header_title" translatable="false">Dawid Raszka Resume</string>
+    <string name="nav_header_subtitle" translatable="false">raszka.dawid@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
     <string name="menu_resume">Resume</string>
     <string name="menu_projects">Projects</string>
@@ -24,6 +23,7 @@
 
     <string name="learn_more">learn more</string>
     <string name="description">Description:</string>
-    <string name="language_used">Language:</string>
-    <string name="technologies_used">Technologies:</string>
+    <string name="language">Language:</string>
+    <string name="libraries_and_patterns">Libraries and patterns:</string>
+    <string name="available_at">Available at:</string>
 </resources>

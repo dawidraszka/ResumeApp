@@ -1,6 +1,7 @@
 package pl.dawidraszka.resumeapp.ui.projects
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -18,32 +19,33 @@ class ProjectsListAdapter(
         val inflater = LayoutInflater.from(parent.context)
         return ProjectViewHolder(
             inflater,
-            parent
+            parent,
+            onItemClicked
         )
     }
 
     override fun onBindViewHolder(holder: ProjectViewHolder, position: Int) {
-        holder.bind(projects[position], onItemClicked)
+        holder.bind(projects[position])
     }
 
     override fun getItemCount(): Int = projects.size
 }
 
 
-class ProjectViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
+class ProjectViewHolder(inflater: LayoutInflater, parent: ViewGroup, private val onItemClicked: OnItemClicked) :
     RecyclerView.ViewHolder(inflater.inflate(R.layout.item_project, parent, false)) {
 
-    fun bind(project: Project, onItemClicked: OnItemClicked) {
+    fun bind(project: Project) {
         itemView.apply {
             with(project) {
                 Glide.with(context)
-                    .load("https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/8c/c9/d4/8cc9d492-6487-0444-741b-8e11dc9c6c1a/pr_source.png/300x0w.jpg")
+                    .load(screenshots?.get(0))
                     .into(screenshot_1)
                 Glide.with(context)
-                    .load("https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/8c/c9/d4/8cc9d492-6487-0444-741b-8e11dc9c6c1a/pr_source.png/300x0w.jpg")
+                    .load(screenshots?.get(1))
                     .into(screenshot_2)
                 Glide.with(context)
-                    .load("https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/8c/c9/d4/8cc9d492-6487-0444-741b-8e11dc9c6c1a/pr_source.png/300x0w.jpg")
+                    .load(screenshots?.get(2))
                     .into(screenshot_3)
                 name_text_view.text = name
                 description_text_view.text = description

@@ -17,26 +17,41 @@ class ProjectsRepository @Inject constructor() {
     val projects = MutableLiveData<List<Project>>()
 
     init {
-        //TODO REMOVE
         val projectsTemp = listOf(
             Project(
                 "BookOn!",
                 "Java",
-                "Application for people interested in books. BookOn compares prices, displays reviews and shows Google search results. ",
-                listOf("Firebase MLKit", "Retrofit2", "Room", "CameraX", "MVVM with LiveData, Repositories and Data Sources" ),
+                "Application for people interested in books. BookOn compares prices, displays reviews and shows Google search results.",
                 listOf(
-                    "https://www.cashbackworld.com/media/pl/content-pages/mobile-app-2019.png",
-                    "https://i.ytimg.com/vi/7QYDCqMmphA/hqdefault.jpg",
-                    "https://pl.avm.de/fileadmin/_processed_/b/2/csm_fritzapp_und_icon_myfritzapp_3840x2560_android_en_22d1424b73.png",
-                    "https://www.scandlines.pl/-/media/scandlines/scandlinesdk/images/landing-pages/smile-app/scandlinesapp_400x450px.ashx?h=450&la=pl&w=400&hash=A7898F4450F35D9C46424D33BDF1EC7ECF3F63AA",
-                    "https://pomoc.home.pl/wp-content/uploads/2020/01/app-store-1.png"
-                )
+                    "Firebase MLKit",
+                    "Retrofit2",
+                    "Room",
+                    "CameraX",
+                    "MVVM", "LiveData", "Glide"
+                ),
+                listOf(
+                    "https://firebasestorage.googleapis.com/v0/b/resumeapp-1b18f.appspot.com/o/BookOn!_2.png?alt=media&token=bfaa83c1-edfc-4561-b66f-74000caeb770",
+                    "https://firebasestorage.googleapis.com/v0/b/resumeapp-1b18f.appspot.com/o/BookOn!_3.png?alt=media&token=77889228-8a77-496b-80ac-e1de2e24097c",
+                    "https://firebasestorage.googleapis.com/v0/b/resumeapp-1b18f.appspot.com/o/BookOn!_4.png?alt=media&token=b277a331-b424-425e-b2b8-7239f0eee5d8",
+                    "https://firebasestorage.googleapis.com/v0/b/resumeapp-1b18f.appspot.com/o/BookOn!_5.png?alt=media&token=5d92414f-2713-4dcb-88b2-e99b4ca1a6a1",
+                    "https://firebasestorage.googleapis.com/v0/b/resumeapp-1b18f.appspot.com/o/BookOn!_6.png?alt=media&token=ba418657-ede7-4a4c-99c1-bb14269a76fa",
+                    "https://firebasestorage.googleapis.com/v0/b/resumeapp-1b18f.appspot.com/o/BookOn!_1.png?alt=media&token=12fdae8c-971a-4bd3-bea3-65fdc269c624"
+                ),
+                "https://github.com/dawidraszka/BookOn-Public"
             ),
             Project(
-                "ResumeApp",
+                "Dawid Raszka Resume",
                 "Kotlin",
-                "Some description. Some description. Some description. Some description. Some description. Some description. ",
-                listOf("Firebase MLKit"), listOf()
+                "Resume/CV application.",
+                listOf("Dagger2", "Firebase Firestore", "Glide", "MVVM", "LiveData"),
+                listOf(
+                    "https://firebasestorage.googleapis.com/v0/b/resumeapp-1b18f.appspot.com/o/DawidRaszkaResume_2.png?alt=media&token=84129d04-ba4c-4922-973c-1e3fd8e2c28e",
+                    "https://firebasestorage.googleapis.com/v0/b/resumeapp-1b18f.appspot.com/o/DawidRaszkaResume_3.png?alt=media&token=1c3cf89c-3dbb-4fe6-a152-5e4c6c0414ba",
+                    "https://firebasestorage.googleapis.com/v0/b/resumeapp-1b18f.appspot.com/o/DawidRaszkaResume_1.png?alt=media&token=caec5ad0-a66a-4276-a608-32679a274d91",
+                    "https://firebasestorage.googleapis.com/v0/b/resumeapp-1b18f.appspot.com/o/DawidRaszkaResume_4.png?alt=media&token=70c716b0-ca63-4daa-a143-d033cc36fb4d"
+                ),
+                "https://github.com/dawidraszka/ResumeApp",
+                "https://play.google.com/store/apps/details?id=app.com.example.szymi.myapplication&hl=pl"
             )
         )
 
@@ -52,10 +67,6 @@ class ProjectsRepository @Inject constructor() {
             .get()
             .addOnSuccessListener { documents ->
                 projects.value = documents.toObjects()
-                /* for (document in documents) {
-
-                 }
-                 projects.value = it.toObject<List<Project>>()*/
             }
         return projects
     }

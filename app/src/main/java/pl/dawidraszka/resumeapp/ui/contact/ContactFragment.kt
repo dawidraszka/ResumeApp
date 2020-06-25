@@ -21,11 +21,6 @@ class ContactFragment : Fragment() {
     ): View? {
         (requireContext().applicationContext as ResumeApplication).appComponent.inject(this)
 
-        val root = inflater.inflate(R.layout.fragment_contact, container, false)
-        /*val textView: TextView = root.findViewById(R.id.contact_me_label)
-        contactViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })*/
-        return root
+        return inflater.inflate(R.layout.fragment_contact, container, false)
     }
 }

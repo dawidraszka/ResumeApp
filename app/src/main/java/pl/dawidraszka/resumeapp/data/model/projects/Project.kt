@@ -5,5 +5,7 @@ data class Project(
     val language: String? = null,
     val description: String? = null,
     val technologies: List<String>? = null,
-    val screenshots: List<String>? = null
+    val screenshots: List<String>? = null,
+    val githubLink: String? = null,
+    val googlePlayLink: String? = null
 )

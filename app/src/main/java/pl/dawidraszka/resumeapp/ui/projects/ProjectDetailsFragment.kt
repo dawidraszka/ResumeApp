@@ -1,22 +1,23 @@
 package pl.dawidraszka.resumeapp.ui.projects
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.fragment_full_screen_gallery.*
 import kotlinx.android.synthetic.main.fragment_project_details.*
+import kotlinx.android.synthetic.main.fragment_project_details.image_recycler_view
 import pl.dawidraszka.resumeapp.R
 import pl.dawidraszka.resumeapp.ResumeApplication
 import javax.inject.Inject
 
-class ProjectDetailsFragment : Fragment() {
+class ProjectDetailsFragment : Fragment(), OnImageClicked {
     @Inject
     lateinit var projectDetailsViewModel: ProjectDetailsViewModel
 
@@ -38,9 +39,10 @@ class ProjectDetailsFragment : Fragment() {
             if (this != null) {
                 language_text_view.text = language
 
-                if (screenshots != null) image_view_pager.adapter =
-                    ImageAdapter(screenshots, requireContext())
-                TabLayoutMediator(dots_indicator, image_view_pager) { _, _ -> }.attach()
+
+                image_recycler_view.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                if (screenshots != null) image_recycler_view.adapter =
+                    ImageListAdapter(screenshots, this@ProjectDetailsFragment)
 
                 technologies?.forEachIndexed { index, technology ->
                     if (index % 2 == 0) technologies_used_left_text_view.append("• $technology\n")
@@ -49,37 +51,23 @@ class ProjectDetailsFragment : Fragment() {
 
                 description_text_view.text = description
                 activity?.toolbar?.title = "$name"
+
+                github_button.link = githubLink
+
+                if(googlePlayLink == null){
+                    buttons_linear_layout.removeView(google_play_button)
+                } else{
+                    google_play_button.link = googlePlayLink
+                }
             }
         }
     }
 
-    class ImageAdapter(private val imageURLs: List<String>, val context: Context) :
-        RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
-            val imageView = ImageView(context)
-            imageView.layoutParams = ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT
-            )
-
-            return ImageViewHolder(imageView)
-        }
-
-
-        override fun getItemCount(): Int = imageURLs.size
-
-        override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-            holder.bind(imageURLs[position])
-        }
-
-        class ImageViewHolder(private val imageView: ImageView) :
-            RecyclerView.ViewHolder(imageView) {
-            fun bind(imageUrl: String) {
-                Glide.with(imageView)
-                    .load(imageUrl)
-                    .into(imageView)
-            }
-        }
+    override fun onClick(index: Int) {
+        findNavController().navigate(R.id.nav_full_screen_image, bundleOf("imageUrls" to projectDetailsViewModel.getCurrentProject()?.screenshots, "index" to index))
     }
+}
+
+interface OnImageClicked {
+    fun onClick(index: Int)
 }

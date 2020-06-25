@@ -1,121 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/image_view_pager"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/image_recycler_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/colorPrimaryDark"
-        android:padding="8dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/dots_indicator"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/image_view_pager"
-        app:layout_constraintEnd_toEndOf="@+id/image_view_pager"
-        app:layout_constraintStart_toStartOf="@+id/image_view_pager"
-        app:layout_constraintTop_toTopOf="@+id/image_view_pager"
-        app:layout_constraintVertical_bias="1.0"
-        app:tabBackground="@drawable/tab_selector"
-        app:tabGravity="center"
-        app:tabIndicatorHeight="0dp" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.4" />
 
-    <TextView
-        android:id="@+id/description_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/description"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/description_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/guideline3" />
-
-    <TextView
-        android:id="@+id/description_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="TextView"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description_label" />
+        app:layout_constraintTop_toBottomOf="@+id/guideline3">
 
-    <TextView
-        android:id="@+id/langauge_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/language_used"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/description_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/description_text_view" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/language_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:elevation="4dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/langauge_label"
-        app:layout_constraintEnd_toEndOf="@+id/description_text_view"
-        app:layout_constraintStart_toEndOf="@+id/langauge_label"
-        app:layout_constraintTop_toTopOf="@+id/langauge_label" />
+            <TextView
+                android:id="@+id/description_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/description"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/technologies_used_label"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/technologies_used"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/description_text_view"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/description_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/language_text_view" />
+            <TextView
+                android:id="@+id/description_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/description_label"
+                app:layout_constraintTop_toBottomOf="@+id/description_label" />
 
-    <TextView
-        android:id="@+id/technologies_used_left_text_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/technologies_used_right_text_view"
-        app:layout_constraintStart_toStartOf="@+id/technologies_used_label"
-        app:layout_constraintTop_toBottomOf="@+id/technologies_used_label" />
+            <TextView
+                android:id="@+id/langauge_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/language"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/description_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/description_text_view" />
 
-    <TextView
-        android:id="@+id/technologies_used_right_text_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/technologies_used_left_text_view"
-        app:layout_constraintEnd_toEndOf="@+id/technologies_used_label"
-        app:layout_constraintStart_toEndOf="@+id/technologies_used_left_text_view"
-        app:layout_constraintTop_toTopOf="@+id/technologies_used_left_text_view" />
+            <TextView
+                android:id="@+id/language_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:elevation="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/langauge_label"
+                app:layout_constraintEnd_toEndOf="@+id/description_text_view"
+                app:layout_constraintStart_toEndOf="@+id/langauge_label"
+                app:layout_constraintTop_toTopOf="@+id/langauge_label" />
+
+            <TextView
+                android:id="@+id/technologies_used_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/libraries_and_patterns"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/description_text_view"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/description_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/language_text_view" />
+
+            <TextView
+                android:id="@+id/technologies_used_left_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintEnd_toStartOf="@+id/technologies_used_right_text_view"
+                app:layout_constraintStart_toStartOf="@+id/technologies_used_label"
+                app:layout_constraintTop_toBottomOf="@+id/technologies_used_label" />
+
+            <TextView
+                android:id="@+id/technologies_used_right_text_view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/technologies_used_left_text_view"
+                app:layout_constraintEnd_toEndOf="@+id/technologies_used_label"
+                app:layout_constraintStart_toEndOf="@+id/technologies_used_left_text_view"
+                app:layout_constraintTop_toTopOf="@+id/technologies_used_left_text_view" />
+
+            <TextView
+                android:id="@+id/available_at_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/available_at"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/buttons_linear_layout"
+                app:layout_constraintTop_toBottomOf="@+id/technologies_used_left_text_view" />
+
+            <LinearLayout
+                android:id="@+id/buttons_linear_layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/available_at_label">
+
+                <pl.dawidraszka.resumeapp.ui.buttons.LinkButton
+                    android:id="@+id/github_button"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/ic_github" />
+
+                <pl.dawidraszka.resumeapp.ui.buttons.LinkButton
+                    android:id="@+id/google_play_button"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_google_play" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

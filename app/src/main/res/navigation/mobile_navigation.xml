@@ -30,5 +30,14 @@
     <fragment
         android:id="@+id/nav_project_details"
         android:name="pl.dawidraszka.resumeapp.ui.projects.ProjectDetailsFragment"
-        tools:layout="@layout/fragment_project_details"/>
+        tools:layout="@layout/fragment_project_details" />
+
+    <fragment
+        android:id="@+id/nav_full_screen_image"
+        android:name="pl.dawidraszka.resumeapp.ui.projects.FullScreenImageFragment"
+        tools:layout="@layout/fragment_full_screen_gallery">
+        <argument
+            android:name="imageUrl"
+            app:argType="string" />
+    </fragment>
 </navigation>

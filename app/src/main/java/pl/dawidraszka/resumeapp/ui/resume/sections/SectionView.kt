@@ -20,7 +20,6 @@ abstract class SectionView(context: Context, attrs: AttributeSet) :
     }
 
     fun prepareParentView() {
-
         inflate(context, R.layout.item_section, this)
 
         expand_collapse_button.setOnClickListener {

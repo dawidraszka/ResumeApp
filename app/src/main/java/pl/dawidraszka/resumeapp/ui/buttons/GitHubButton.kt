@@ -8,7 +8,8 @@ import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatImageButton
 
 
-class GitHubButton(context: Context, attrs: AttributeSet) : AppCompatImageButton(context, attrs) {
+class GitHubButton(context: Context, attrs: AttributeSet?) :
+    AppCompatImageButton(context, attrs) {
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()

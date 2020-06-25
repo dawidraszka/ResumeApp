@@ -32,7 +32,6 @@ class ProjectsFragment : Fragment(), OnItemClicked {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         projects_recycler_view.layoutManager = LinearLayoutManager(context)
 
         projectsViewModel.getProjects().observe(viewLifecycleOwner, Observer {
