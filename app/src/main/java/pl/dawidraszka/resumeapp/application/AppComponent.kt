@@ -1,4 +1,4 @@
-package pl.dawidraszka.resumeapp
+package pl.dawidraszka.resumeapp.application
 
 import android.content.Context
 import dagger.BindsInstance
@@ -6,8 +6,8 @@ import dagger.Component
 import pl.dawidraszka.resumeapp.data.repository.projects.ProjectsRepository
 import pl.dawidraszka.resumeapp.data.repository.resume.ResumeRepository
 import pl.dawidraszka.resumeapp.ui.contact.ContactFragment
-import pl.dawidraszka.resumeapp.ui.projects.ProjectDetailsFragment
-import pl.dawidraszka.resumeapp.ui.projects.ProjectsFragment
+import pl.dawidraszka.resumeapp.ui.projects.fragments.ProjectDetailsFragment
+import pl.dawidraszka.resumeapp.ui.projects.fragments.ProjectsFragment
 import pl.dawidraszka.resumeapp.ui.resume.ResumeFragment
 import javax.inject.Singleton
 

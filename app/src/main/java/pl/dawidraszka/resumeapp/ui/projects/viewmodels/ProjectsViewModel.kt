@@ -1,4 +1,4 @@
-package pl.dawidraszka.resumeapp.ui.projects
+package pl.dawidraszka.resumeapp.ui.projects.viewmodels
 
 import androidx.lifecycle.ViewModel
 import pl.dawidraszka.resumeapp.data.model.projects.Project

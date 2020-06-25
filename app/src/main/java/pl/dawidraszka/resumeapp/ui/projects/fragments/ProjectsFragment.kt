@@ -1,4 +1,4 @@
-package pl.dawidraszka.resumeapp.ui.projects
+package pl.dawidraszka.resumeapp.ui.projects.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,11 +10,15 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_projects.*
 import pl.dawidraszka.resumeapp.R
-import pl.dawidraszka.resumeapp.ResumeApplication
+import pl.dawidraszka.resumeapp.application.ResumeApplication
 import pl.dawidraszka.resumeapp.data.model.projects.Project
+import pl.dawidraszka.resumeapp.ui.projects.adapters.OnItemClicked
+import pl.dawidraszka.resumeapp.ui.projects.adapters.ProjectsListAdapter
+import pl.dawidraszka.resumeapp.ui.projects.viewmodels.ProjectsViewModel
 import javax.inject.Inject
 
-class ProjectsFragment : Fragment(), OnItemClicked {
+class ProjectsFragment : Fragment(),
+    OnItemClicked {
 
     @Inject
     lateinit var projectsViewModel: ProjectsViewModel
@@ -35,7 +39,11 @@ class ProjectsFragment : Fragment(), OnItemClicked {
         projects_recycler_view.layoutManager = LinearLayoutManager(context)
 
         projectsViewModel.getProjects().observe(viewLifecycleOwner, Observer {
-            projects_recycler_view.adapter = ProjectsListAdapter(it, this)
+            projects_recycler_view.adapter =
+                ProjectsListAdapter(
+                    it,
+                    this
+                )
         })
     }
 

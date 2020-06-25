@@ -1,4 +1,4 @@
-package pl.dawidraszka.resumeapp.ui
+package pl.dawidraszka.resumeapp.ui.resume.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -40,7 +40,10 @@ class ComplexListViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
                 details_recycler_view.apply {
                     layoutManager = NonScrollableLayoutManager(context)
                     if (details != null)
-                        adapter = SimpleListAdapter(details)
+                        adapter =
+                            SimpleListAdapter(
+                                details
+                            )
                 }
             }
         }

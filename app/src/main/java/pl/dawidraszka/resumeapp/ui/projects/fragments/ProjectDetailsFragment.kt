@@ -1,4 +1,4 @@
-package pl.dawidraszka.resumeapp.ui.projects
+package pl.dawidraszka.resumeapp.ui.projects.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,16 +8,16 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.app_bar_main.*
-import kotlinx.android.synthetic.main.fragment_full_screen_gallery.*
 import kotlinx.android.synthetic.main.fragment_project_details.*
-import kotlinx.android.synthetic.main.fragment_project_details.image_recycler_view
 import pl.dawidraszka.resumeapp.R
-import pl.dawidraszka.resumeapp.ResumeApplication
+import pl.dawidraszka.resumeapp.application.ResumeApplication
+import pl.dawidraszka.resumeapp.ui.projects.adapters.ImageListAdapter
+import pl.dawidraszka.resumeapp.ui.projects.viewmodels.ProjectDetailsViewModel
 import javax.inject.Inject
 
-class ProjectDetailsFragment : Fragment(), OnImageClicked {
+class ProjectDetailsFragment : Fragment(),
+    OnImageClicked {
     @Inject
     lateinit var projectDetailsViewModel: ProjectDetailsViewModel
 
@@ -40,9 +40,13 @@ class ProjectDetailsFragment : Fragment(), OnImageClicked {
                 language_text_view.text = language
 
 
-                image_recycler_view.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                image_recycler_view.layoutManager =
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
                 if (screenshots != null) image_recycler_view.adapter =
-                    ImageListAdapter(screenshots, this@ProjectDetailsFragment)
+                    ImageListAdapter(
+                        screenshots,
+                        this@ProjectDetailsFragment
+                    )
 
                 technologies?.forEachIndexed { index, technology ->
                     if (index % 2 == 0) technologies_used_left_text_view.append("• $technology\n")
@@ -54,9 +58,9 @@ class ProjectDetailsFragment : Fragment(), OnImageClicked {
 
                 github_button.link = githubLink
 
-                if(googlePlayLink == null){
+                if (googlePlayLink == null) {
                     buttons_linear_layout.removeView(google_play_button)
-                } else{
+                } else {
                     google_play_button.link = googlePlayLink
                 }
             }
@@ -64,7 +68,13 @@ class ProjectDetailsFragment : Fragment(), OnImageClicked {
     }
 
     override fun onClick(index: Int) {
-        findNavController().navigate(R.id.nav_full_screen_image, bundleOf("imageUrls" to projectDetailsViewModel.getCurrentProject()?.screenshots, "index" to index))
+        findNavController().navigate(
+            R.id.nav_full_screen_image,
+            bundleOf(
+                "imageUrls" to projectDetailsViewModel.getCurrentProject()?.screenshots,
+                "index" to index
+            )
+        )
     }
 }
 

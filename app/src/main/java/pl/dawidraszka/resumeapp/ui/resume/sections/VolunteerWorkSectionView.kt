@@ -6,8 +6,8 @@ import kotlinx.android.synthetic.main.item_section.view.*
 import kotlinx.android.synthetic.main.section_list.view.*
 import pl.dawidraszka.resumeapp.R
 import pl.dawidraszka.resumeapp.data.model.resume.Resume
-import pl.dawidraszka.resumeapp.ui.ComplexListAdapter
 import pl.dawidraszka.resumeapp.ui.resume.NonScrollableLayoutManager
+import pl.dawidraszka.resumeapp.ui.resume.adapters.ComplexListAdapter
 import javax.inject.Inject
 
 class VolunteerWorkSectionView @Inject constructor(context: Context, attrs: AttributeSet) :
@@ -20,7 +20,10 @@ class VolunteerWorkSectionView @Inject constructor(context: Context, attrs: Attr
         list_recycler_view.apply {
             layoutManager = NonScrollableLayoutManager(context)
             if (resume.volunteerWorkSection?.volunteerWork != null)
-                adapter = ComplexListAdapter(resume.volunteerWorkSection.volunteerWork)
+                adapter =
+                    ComplexListAdapter(
+                        resume.volunteerWorkSection.volunteerWork
+                    )
         }
     }
 

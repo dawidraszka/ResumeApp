@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/nav_projects"
-        android:name="pl.dawidraszka.resumeapp.ui.projects.ProjectsFragment"
+        android:name="pl.dawidraszka.resumeapp.ui.projects.fragments.ProjectsFragment"
         android:label="@string/menu_projects"
         tools:layout="@layout/fragment_projects">
         <action
@@ -29,12 +29,12 @@
 
     <fragment
         android:id="@+id/nav_project_details"
-        android:name="pl.dawidraszka.resumeapp.ui.projects.ProjectDetailsFragment"
+        android:name="pl.dawidraszka.resumeapp.ui.projects.fragments.ProjectDetailsFragment"
         tools:layout="@layout/fragment_project_details" />
 
     <fragment
         android:id="@+id/nav_full_screen_image"
-        android:name="pl.dawidraszka.resumeapp.ui.projects.FullScreenImageFragment"
+        android:name="pl.dawidraszka.resumeapp.ui.projects.fragments.FullScreenImageFragment"
         tools:layout="@layout/fragment_full_screen_gallery">
         <argument
             android:name="imageUrl"

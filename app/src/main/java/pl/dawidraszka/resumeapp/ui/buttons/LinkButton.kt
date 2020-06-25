@@ -7,7 +7,7 @@ import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatImageButton
 import pl.dawidraszka.resumeapp.R
 
-class LinkButton (context: Context, val attrs: AttributeSet) : AppCompatImageButton(context, attrs) {
+class LinkButton(context: Context, val attrs: AttributeSet) : AppCompatImageButton(context, attrs) {
 
     var link: String? = null
 
@@ -15,7 +15,8 @@ class LinkButton (context: Context, val attrs: AttributeSet) : AppCompatImageBut
         context.theme.obtainStyledAttributes(
             attrs,
             R.styleable.LinkButton,
-            0, 0).apply {
+            0, 0
+        ).apply {
 
             try {
                 link = getString(R.styleable.LinkButton_link)

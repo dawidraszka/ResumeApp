@@ -1,4 +1,4 @@
-package pl.dawidraszka.resumeapp
+package pl.dawidraszka.resumeapp.application
 
 import android.app.Application
 

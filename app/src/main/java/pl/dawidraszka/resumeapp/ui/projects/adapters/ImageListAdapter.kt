@@ -1,4 +1,4 @@
-package pl.dawidraszka.resumeapp.ui.projects
+package pl.dawidraszka.resumeapp.ui.projects.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,13 +6,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_image.view.*
 import pl.dawidraszka.resumeapp.R
+import pl.dawidraszka.resumeapp.ui.projects.fragments.OnImageClicked
 
-class ImageListAdapter(private val images: List<String>, private val onImageClicked: OnImageClicked) :
+class ImageListAdapter(
+    private val images: List<String>,
+    private val onImageClicked: OnImageClicked
+) :
     RecyclerView.Adapter<SimpleListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SimpleListViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return SimpleListViewHolder(inflater, parent, onImageClicked)
+        return SimpleListViewHolder(
+            inflater,
+            parent,
+            onImageClicked
+        )
     }
 
     override fun onBindViewHolder(holder: SimpleListViewHolder, position: Int) {
@@ -23,7 +31,11 @@ class ImageListAdapter(private val images: List<String>, private val onImageClic
 }
 
 
-class SimpleListViewHolder(inflater: LayoutInflater, parent: ViewGroup, private val onImageClicked: OnImageClicked) :
+class SimpleListViewHolder(
+    inflater: LayoutInflater,
+    parent: ViewGroup,
+    private val onImageClicked: OnImageClicked
+) :
     RecyclerView.ViewHolder(inflater.inflate(R.layout.item_image, parent, false)) {
 
     fun bind(screenUrl: String) {
@@ -31,6 +43,6 @@ class SimpleListViewHolder(inflater: LayoutInflater, parent: ViewGroup, private 
             .load(screenUrl)
             .into(itemView.image_view)
 
-        itemView.setOnClickListener{onImageClicked.onClick(adapterPosition)}
+        itemView.setOnClickListener { onImageClicked.onClick(adapterPosition) }
     }
 }

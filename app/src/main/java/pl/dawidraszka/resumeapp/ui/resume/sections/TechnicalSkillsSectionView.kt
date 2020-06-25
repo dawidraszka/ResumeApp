@@ -6,8 +6,8 @@ import kotlinx.android.synthetic.main.item_section.view.*
 import kotlinx.android.synthetic.main.section_list.view.*
 import pl.dawidraszka.resumeapp.R
 import pl.dawidraszka.resumeapp.data.model.resume.Resume
-import pl.dawidraszka.resumeapp.ui.SimpleListAdapter
 import pl.dawidraszka.resumeapp.ui.resume.NonScrollableLayoutManager
+import pl.dawidraszka.resumeapp.ui.resume.adapters.SimpleListAdapter
 import javax.inject.Inject
 
 class TechnicalSkillsSectionView @Inject constructor(context: Context, attrs: AttributeSet) :
@@ -20,7 +20,10 @@ class TechnicalSkillsSectionView @Inject constructor(context: Context, attrs: At
         list_recycler_view.apply {
             layoutManager = NonScrollableLayoutManager(context)
             if (resume.technicalSkillsSection?.technicalSkills != null)
-                adapter = SimpleListAdapter(resume.technicalSkillsSection.technicalSkills)
+                adapter =
+                    SimpleListAdapter(
+                        resume.technicalSkillsSection.technicalSkills
+                    )
         }
     }
 

@@ -1,20 +1,14 @@
-package pl.dawidraszka.resumeapp
+package pl.dawidraszka.resumeapp.application
 
 import android.os.Bundle
-import android.view.Gravity
-import android.view.Menu
-import android.view.MenuItem
-import android.view.ViewParent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.*
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import pl.dawidraszka.resumeapp.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,7 +26,9 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_resume, R.id.nav_projects, R.id.nav_contact
+                R.id.nav_resume,
+                R.id.nav_projects,
+                R.id.nav_contact
             ), drawer_layout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

@@ -1,7 +1,6 @@
-package pl.dawidraszka.resumeapp.ui.projects
+package pl.dawidraszka.resumeapp.ui.projects.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -32,7 +31,11 @@ class ProjectsListAdapter(
 }
 
 
-class ProjectViewHolder(inflater: LayoutInflater, parent: ViewGroup, private val onItemClicked: OnItemClicked) :
+class ProjectViewHolder(
+    inflater: LayoutInflater,
+    parent: ViewGroup,
+    private val onItemClicked: OnItemClicked
+) :
     RecyclerView.ViewHolder(inflater.inflate(R.layout.item_project, parent, false)) {
 
     fun bind(project: Project) {

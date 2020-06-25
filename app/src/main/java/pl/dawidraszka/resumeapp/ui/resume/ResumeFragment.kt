@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.fragment_resume.view.*
 import pl.dawidraszka.resumeapp.R
-import pl.dawidraszka.resumeapp.ResumeApplication
+import pl.dawidraszka.resumeapp.application.ResumeApplication
 import pl.dawidraszka.resumeapp.ui.resume.sections.SectionView
 import javax.inject.Inject
 

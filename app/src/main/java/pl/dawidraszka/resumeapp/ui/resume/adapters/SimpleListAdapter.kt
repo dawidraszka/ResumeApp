@@ -1,4 +1,4 @@
-package pl.dawidraszka.resumeapp.ui
+package pl.dawidraszka.resumeapp.ui.resume.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,11 +7,14 @@ import kotlinx.android.synthetic.main.item_simple_list.view.*
 import pl.dawidraszka.resumeapp.R
 
 class SimpleListAdapter(private val items: List<String>) :
-RecyclerView.Adapter<SimpleListViewHolder>() {
+    RecyclerView.Adapter<SimpleListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SimpleListViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return SimpleListViewHolder(inflater, parent)
+        return SimpleListViewHolder(
+            inflater,
+            parent
+        )
     }
 
     override fun onBindViewHolder(holder: SimpleListViewHolder, position: Int) {

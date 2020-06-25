@@ -1,3 +1,3 @@
 package pl.dawidraszka.resumeapp.data.model.resume
 
-open class Section(val name: String)
+open class Section(val nae: String)

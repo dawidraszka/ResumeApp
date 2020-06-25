@@ -1,4 +1,4 @@
-package pl.dawidraszka.resumeapp.ui.projects
+package pl.dawidraszka.resumeapp.ui.projects.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -35,7 +35,6 @@ class FullScreenImageFragment : Fragment() {
         if (index != null)
             root.image_view_pager.currentItem = index
 
-
         TabLayoutMediator(root.dots_indicator, root.image_view_pager) { _, _ -> }.attach()
 
         return root
@@ -52,7 +51,9 @@ class ImageAdapter(private val imageURLs: List<String>, val context: Context) :
             ViewGroup.LayoutParams.MATCH_PARENT
         )
 
-        return ImageViewHolder(imageView)
+        return ImageViewHolder(
+            imageView
+        )
     }
 
     override fun getItemCount(): Int = imageURLs.size
