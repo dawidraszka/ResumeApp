@@ -18,8 +18,7 @@ class ResumeRepository @Inject constructor() {
         firestoreDatabase.collection("resumes").document("resume")
             .get()
             .addOnSuccessListener {
-                val resumeTemp = it.toObject<Resume>()
-                resume.value = resumeTemp
+                resume.value = it.toObject<Resume>()
             }
         return resume
     }

@@ -22,7 +22,7 @@ class AwardsAndHonoursSectionView @Inject constructor(context: Context, attrs: A
             if (resume.awardsSection?.awards != null)
                 adapter =
                     ComplexListAdapter(
-                        resume.awardsSection.awards
+                        resume.awardsSection.awards.sortedByDescending { it.dateTimestamp }
                     )
         }
     }

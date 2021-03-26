@@ -22,7 +22,7 @@ class VolunteerWorkSectionView @Inject constructor(context: Context, attrs: Attr
             if (resume.volunteerWorkSection?.volunteerWork != null)
                 adapter =
                     ComplexListAdapter(
-                        resume.volunteerWorkSection.volunteerWork
+                        resume.volunteerWorkSection.volunteerWork.sortedByDescending { it.startDateTimestamp }
                     )
         }
     }

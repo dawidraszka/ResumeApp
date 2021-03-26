@@ -40,10 +40,7 @@ class ComplexListViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
                 details_recycler_view.apply {
                     layoutManager = NonScrollableLayoutManager(context)
                     if (details != null)
-                        adapter =
-                            SimpleListAdapter(
-                                details
-                            )
+                        adapter = SimpleListAdapter(details)
                 }
             }
         }

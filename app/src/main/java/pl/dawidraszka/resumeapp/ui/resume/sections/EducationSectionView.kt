@@ -22,7 +22,7 @@ class EducationSectionView @Inject constructor(context: Context, attrs: Attribut
             if (resume.educationSection?.schools != null)
                 adapter =
                     ComplexListAdapter(
-                        resume.educationSection.schools
+                        resume.educationSection.schools.sortedByDescending { it.startDateTimestamp }
                     )
         }
     }

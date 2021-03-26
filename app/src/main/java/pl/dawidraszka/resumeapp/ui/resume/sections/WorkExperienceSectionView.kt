@@ -22,7 +22,7 @@ class WorkExperienceSectionView @Inject constructor(context: Context, attrs: Att
             if (resume.workExperienceSection?.workExperience != null)
                 adapter =
                     ComplexListAdapter(
-                        resume.workExperienceSection.workExperience
+                        resume.workExperienceSection.workExperience.sortedByDescending { it.startDateTimestamp }
                     )
         }
     }
